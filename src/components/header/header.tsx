@@ -13,7 +13,7 @@ export const Header: FC = () => {
             />
             <div className={css.imageContainer}>
                 <Link href={'/'}>
-                    <Image src="/next.svg" alt="next logo" fill={true} />
+                    <Image src="/icon0.svg" alt="initials logo" fill={true} />
                 </Link>
             </div>
         </header>

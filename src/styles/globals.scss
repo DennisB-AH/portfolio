@@ -1,4 +1,4 @@
-$primary-color: green;
+$primary-color: #0080FF;
 $secondary-color: lightgreen;
 $black-color: #070707;
 $white-color: #fff;
@@ -14,6 +14,8 @@ $breakpoint-md: '64em';
 .content {
   flex: 1 0 auto;
   width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .body {
