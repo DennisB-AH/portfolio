@@ -1,26 +1,57 @@
 {
-  "name": "nextjs",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
-  },
-  "dependencies": {
-    "next": "16.1.1",
-    "react": "19.2.3",
-    "react-dom": "19.2.3"
-  },
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.1",
-    "tailwindcss": "^4",
-    "typescript": "^5"
-  }
+    "name": "portfolio",
+    "description": "My personal portfolio website",
+    "version": "0.1.0",
+    "license": "UNLICENSED",
+    "private": true,
+    "engines": {
+        "node": ">=24",
+        "pnpm": ">=10"
+    },
+    "packageManager": "pnpm@10.26.1",
+    "type": "module",
+    "repository": {
+        "type": "git",
+        "directory": "/",
+        "url": "https://github.com/dennisb-ah/portfolio.git"
+    },
+    "scripts": {
+        "clean": "rimraf .next node_modules coverage .swc",
+        "postinstall": "husky",
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "----- Lint & Format -----": "-----",
+        "format": "biome check . --fix",
+        "format-n-lint": "biome check . && stylelint **/*.scss",
+        "format-n-lint:fix": "biome check . --fix && stylelint **/*.scss --fix",
+        "format-n-lint:ci": "biome ci --error-on-warnings && stylelint \"**/*.{css,scss,sass}\"",
+        "pre-commit": "pnpm format-n-lint:fix"
+    },
+    "dependencies": {
+        "@biomejs/biome": "2.3.10",
+        "@radix-ui/themes": "3.2.1",
+        "@tabler/icons-react": "3.36.0",
+        "husky": "9.1.7",
+        "next": "16.1.1",
+        "react": "19.2.3",
+        "react-dom": "19.2.3",
+        "rimraf": "6.1.2",
+        "sass": "1.97.1",
+        "stylelint": "16.26.1"
+    },
+    "devDependencies": {
+        "@types/node": "25.0.3",
+        "@types/react": "19.2.7",
+        "@types/react-dom": "19.2.3",
+        "csstype": "3.2.3",
+        "lint-staged": "16.2.7",
+        "stylelint-config-standard-scss": "16.0.0",
+        "typescript": "5.9.3"
+    },
+    "lint-staged": {
+        "*.{css,scss,sass}": "stylelint --fix",
+        "*.{js,cjs,mjs,jsx,ts,tsx,graphql,json,jsonc}": "biome check --fix --files-ignore-unknown=true --no-errors-on-unmatched"
+    }
 }

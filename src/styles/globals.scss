@@ -1,0 +1,21 @@
+$primary-color: green;
+$secondary-color: lightgreen;
+$black-color: #070707;
+$white-color: #fff;
+$breakpoint-sm: '48em';
+$breakpoint-md: '64em';
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+.body {
+  margin: 0;
+}
