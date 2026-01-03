@@ -1,6 +1,6 @@
 import type { FC } from 'react';
-import { Link } from '@radix-ui/themes';
-import Image from 'next/image';
+import { CONTACT_INFO } from '@constants/contact-info';
+import { Button, Heading, Link } from '@radix-ui/themes';
 
 import css from './header.module.scss';
 
@@ -11,11 +11,26 @@ export const Header: FC = () => {
                 name="viewport"
                 content="minimum-scale=1.0, initial-scale=1.0, width=device-width, user-scalable=no"
             />
-            <div className={css.imageContainer}>
+            <div className={css.titleContainer}>
                 <Link href={'/'}>
-                    <Image src="/icon0.svg" alt="initials logo" fill={true} />
+                    <Heading>Dennis Bleeker</Heading>
                 </Link>
             </div>
+            <section className={css.contact}>
+                {CONTACT_INFO.map(entry => (
+                    <a
+                        key={entry.name}
+                        href={entry.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button className={css.button} variant="solid">
+                            <entry.icon />
+                            {entry.name}
+                        </Button>
+                    </a>
+                ))}
+            </section>
         </header>
     );
 };

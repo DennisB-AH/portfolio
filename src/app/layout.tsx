@@ -5,6 +5,7 @@ import { Theme } from '@radix-ui/themes';
 import type { Metadata } from 'next';
 
 import '@styles/globals.scss';
+import '@radix-ui/themes/styles.css';
 
 export const metadata: Metadata = {
     title: 'Dennis Bleeker - Portfolio',
